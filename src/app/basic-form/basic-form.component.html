@@ -1,0 +1,163 @@
+<section>
+  <div class="edge"></div>
+  <header>
+    <h2>C O N S T R U A</h2>
+    <h2>S E U</h2>
+    <h2>C U R R Í C U L O</h2>
+    <h1>A B A I X O</h1>
+  </header>
+
+  <mat-divider></mat-divider>
+
+  <body>
+
+    <form [formGroup]="basicForm">
+      <div class="fieldInfo">
+
+        <h3>Informações básicas</h3>
+        <mat-form-field appearance="outline" class="full">
+          <mat-label>Nome completo:</mat-label>
+          <input matInput placeholder="ex: João Paulo da Silva" formControlName="name"
+            required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full">
+          <mat-label>Endereço:</mat-label>
+          <input matInput placeholder="ex: Rua das Graças, 1111" formControlName="address" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full">
+          <mat-label>E-mail:</mat-label>
+          <input matInput placeholder="ex: joaodasilva@gmail.com" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full">
+          <mat-label>Telefone:</mat-label>
+          <input matInput placeholder="ex: (41)99999-9999" formControlName="phone" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="full">
+          <mat-label>Objetivo</mat-label>
+          <textarea matInput placeholder="Ex: Busco desenvolvimento profissional na área de Automatização de Processos. Compenso o curto período de experiência com rápido aprendizado, dedicação e excelentes habilidades interpessoais."
+            formControlName="objective" required></textarea>
+        </mat-form-field>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="fieldEducations">
+        <h3>Educação</h3>
+        <button mat-raised-button class="addButton" (click)="addEducation()">+</button>
+        <div formArrayName="educations">
+          <div *ngFor="let education of educationForms.controls; let i=index" [formGroupName]="i">
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Instituição</mat-label>
+              <input (input)="changeTextToUppercase('institution')" matInput placeholder="Ex: Universidade Brasileira / Ex2: Colégio São João"
+                formControlName="institution">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Curso</mat-label>
+              <input matInput placeholder="Ex: Engenharia Civil / Ex2: Ensino Médio" formControlName="course">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Ano de término do curso</mat-label>
+              <input type="number" matInput placeholder="" min="1950" max="2100" formControlName="courseEnd">
+            </mat-form-field>
+            <button mat-raised-button class="deleteButton" (click)="deleteEducation(i)">Deletar Educação</button>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="fieldCompEducations">
+        <h3>Educação complementar</h3>
+        <button mat-raised-button class="addButton" (click)="addCompEducation()">+</button>
+        <div formArrayName="compEducations">
+          <div *ngFor="let compEducation of compEducationForms.controls; let i=index" [formGroupName]="i">
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Instituição do curso complementar</mat-label>
+              <input (input)="changeTextToUppercase('compInstitution')" matInput placeholder="Ex: Senai"
+                formControlName="compInstitution">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Nome do curso complementar</mat-label>
+              <input matInput placeholder="Ex: Aperfeiçoamento Profissional em Ajustagem Mecânica, AutoCAD - Básico." formControlName="compCourse">
+            </mat-form-field>
+            <button mat-raised-button class="deleteButton" (click)="deleteCompEducation(i)">Deletar Educação
+              Complementar</button>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="fieldExperiences">
+        <h3>Experiência Profissional</h3>
+        <button mat-raised-button class="addButton" (click)="addExperience()">+</button>
+        <div formArrayName="experiences">
+          <div *ngFor="let experience of experienceForms.controls; let i=index" [formGroupName]="i">
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Empresa</mat-label>
+              <input (input)="changeTextToUppercase('jobCompany')" matInput placeholder="Ex: AmBev / Ex2: Nestle" formControlName="jobCompany">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Cargo</mat-label>
+              <input matInput placeholder="Ex: Técnico de Informática" formControlName="jobTitle">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Data de início do cargo</mat-label>
+              <input matInput placeholder="Ex: Janeiro de 2021" formControlName="jobStart">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Data de término do cargo</mat-label>
+              <input matInput placeholder="Ex: Julho de 2022" formControlName="jobEnd">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Descrição do cargo</mat-label>
+              <textarea matInput placeholder="Ex: Instalações e manutenções de hardwares e softwares; suporte ao usuário; criação de manuais" formControlName="jobDescription"></textarea>
+            </mat-form-field>
+            <button mat-raised-button class="deleteButton" (click)="deleteExperience(i)">Deletar Experiência</button>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="fieldSkills">
+        <h3>Habilidades</h3>
+        <button mat-raised-button class="addButton" (click)="addSkill()">+</button>
+        <div formArrayName="skills">
+          <div *ngFor="let skill of skillForms.controls; let i=index" [formGroupName]="i">
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Habilidade</mat-label>
+              <input matInput placeholder="Ex: Excel / Ex2: Pacote Office" formControlName="skillDescription">
+            </mat-form-field>
+            <button mat-raised-button class="deleteButton" (click)="deleteSkill(i)">Deletar Habilidade</button>
+          </div>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="fieldIdioms">
+        <h3>Idiomas</h3>
+        <button mat-raised-button class="addButton" (click)="addIdiom()">+</button>
+        <div formArrayName="idioms">
+          <div *ngFor="let idiom of idiomForms.controls; let i=index" [formGroupName]="i">
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Idioma</mat-label>
+              <input matInput placeholder="Ex: Português" formControlName="language">
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="xs">
+              <mat-label>Nível de proficiência no idioma</mat-label>
+              <input matInput placeholder="Ex: Fluente" formControlName="languageLevel">
+            </mat-form-field>
+            <button mat-raised-button class="deleteButton" (click)="deleteIdiom(i)">Deletar Idioma</button>
+          </div>
+        </div>
+      </div>
+
+    </form>
+    <div class="fieldButtons">
+      <button mat-raised-button type="button" class="pdfButton" (click)="generatePDF()">Abrir Currículo</button>
+    </div>
+  </body>
+  <div class="edge"></div>
+</section>

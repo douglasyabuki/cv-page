@@ -1,0 +1,119 @@
+.edge{
+  height: 3px;
+  min-width: 375px;
+  width:100%;
+  background-image: linear-gradient(to right, #EEC367,#EEC367,#BF9234,#EFC468,#EFC468)
+}
+.nav {
+  min-width: 375px;
+  height: 50px;
+  width: 100%;
+  background-color: #1F232D;
+}
+
+.nav>.nav-header {
+  display: inline;
+}
+
+.nav>.nav-header>.nav-title {
+  height: 45px;
+  padding-left: 10px;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 400;
+  color: #EBE2DB;
+  vertical-align: middle;
+  padding-top: 15px;
+}
+
+@media (max-width:600px) {
+  .nav>.nav-button {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+  .nav>.nav-button>label {
+    display: block;
+    width: 50px;
+    height: 50px;
+    padding-top: 12px;
+    margin-top: 5px;
+  }
+
+  .nav>.nav-button>label>span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #EBE2DB;
+  }
+
+  .nav>.nav-links {
+    position: absolute;
+    display: block;
+    background-color: #1F232D;
+    height: 0px;
+    transition: all 0.2s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    right: 0px;
+    width: 25%;
+    margin-right: 8px;
+    text-decoration: underline;
+  }
+
+  .nav>.nav-links>a {
+    color: #EBE2DB;
+    display: block;
+    width: 100%;
+  }
+
+  .nav>.nav-links>a:hover {
+    background-color: #899288;
+  }
+
+  .nav>#nav-check {
+    display: none;
+  }
+
+  .nav>#nav-check:not(:checked)~.nav-links {
+    height: 0px;
+  }
+
+  .nav>#nav-check:checked~.nav-links {
+    margin-top: 2px;
+    height: 70px;
+    width: 100px;
+    overflow-y: auto;
+    border-bottom: 2px solid #EFC468;
+  }
+
+}
+
+@media (min-width:600px) {
+  .nav>.nav-button {
+    display: none;
+  }
+
+  .nav>.nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+
+  .nav>.nav-links>a {
+    display: inline-block;
+    color: #EBE2DB;
+    padding: 15px 10px 13px 10px;
+  }
+
+  .nav>.nav-links>a:hover {
+    background-color: #899288;
+    border-radius: 16px;
+  }
+
+  .nav>#nav-check {
+    display: none;
+  }
+}

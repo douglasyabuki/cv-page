@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+* {
+  font-family: 'Josefin Sans';
+  text-decoration: none;
+}
+body{
+  margin: 0px auto;
+}
+h1{
+  font-weight: 600;
+}
+
+h2{
+  font-weight: 400;
+}
+
+p{
+  font-weight: 200;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

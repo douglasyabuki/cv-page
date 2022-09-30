@@ -1,0 +1,61 @@
+h1 {
+    color: #1F232D;
+    font-size: 35px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  h2 {
+    color: hsl(0, 36%, 70%);
+    font-weight: 200;
+    font-size: 35px;
+    margin-top: 30px;
+    line-height: 25px;
+    text-align: center;
+  }
+  
+  p {
+    color: hsl(0, 36%, 70%);
+    text-align: center;
+    line-height: 20px;
+    margin: 10px;
+    margin-bottom: 35px;
+  }
+  
+  a {
+    color: #1F232D;
+  }
+  
+  .edge {
+    height: 3px;
+    min-width: 300px;
+    width: 100%;
+    background-image: linear-gradient(to right, #EEC367, #EEC367, #BF9234, #EFC468, #EFC468)
+  }
+  
+  section {
+    width: 375px;
+    margin: 0 auto;
+    background-color: hsl(0, 0%, 100%);
+  }
+  header{
+    margin-top: 35px;
+    margin-bottom: 35px;
+  }
+  body {
+    margin-bottom: 50px;
+  
+    h1{
+      margin-top: 30px;
+    }
+    p{
+      margin-top: 30px;
+    }
+  }
+  
+  .photomobile {
+    object-fit: contain;
+    width: 300px;
+    padding-bottom: 20px;
+  }
+  

@@ -1,0 +1,103 @@
+h1 {
+  color: #1F232D;
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+h2 {
+  color: hsl(0, 36%, 70%);
+  font-weight: 200;
+  font-size: 35px;
+  margin-top: 30px;
+  line-height: 25px;
+  text-align: center;
+}
+
+h3{
+  color: hsl(0, 36%, 70%);
+  font-weight: 200;
+  font-size: 25px;
+  text-align: left;
+  margin: 30px 0px 20px 10px;
+  display: inline-flex;
+}
+
+h4{
+  margin-bottom: 0px;
+}
+section {
+  width: 375px;
+  margin: 0 auto;
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  flex-direction: column;
+}
+mat-divider{
+  margin-top: 35px;
+}
+header{
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+body {
+  margin: 0 auto;
+}
+.edge {
+  height: 3px;
+  min-width: 300px;
+  width: 100%;
+  background-image: linear-gradient(to right, #EEC367, #EEC367, #BF9234, #EFC468, #EFC468)
+}
+
+.full{
+  width: 90%;
+  left: 5%;
+}
+.fieldInfo, .fieldEducations, .fieldCompEducations, .fieldExperiences, .fieldSkills, .fieldIdioms{
+  margin-top: 30px;
+  margin-bottom: 35px;
+  position: flex;
+}
+textarea{
+  min-height: 80px;
+}
+.xs{
+  margin: 0 auto;
+  width: 90%;
+  left: 5%;
+}
+.addButton{
+  float: right;
+  background-color: #1F232D;
+  color: #D9D8D7;
+  margin-top: 30px;
+  min-width: 28px;
+  line-height: 28px;
+  border: 2px solid #BF9234;
+}
+.deleteButton{
+  background-color: #A62631;
+  float: right;
+  color: #D9D8D7;
+  border: 2px solid #BF9234;
+}
+.fieldButtons{
+  width: 100%;
+  height: 50px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+.pdfButton{
+  background-color: #1F232D;
+  border: 2px solid #BF9234;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 60%;
+  color: #D9D8D7;
+
+}
+
